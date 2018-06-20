@@ -1,0 +1,22 @@
+class Solution:
+    def computeArea(self, A, B, C, D, E, F, G, H):
+        """
+        :type A: int
+        :type B: int
+        :type C: int
+        :type D: int
+        :type E: int
+        :type F: int
+        :type G: int
+        :type H: int
+        :rtype: int
+        """
+        s1 = (C - A)* (D - B)
+        s2 = (G - E) * (H - F)
+        overlapW = min(C, G) - max(A, E)
+        overlapH = min(D, H) - max(B, F)
+        if overlapW < 0: 
+              overlapW = 0
+        if overlapH < 0:
+              overlapH = 0
+        return s1 + s2 - overlapW * overlapH
