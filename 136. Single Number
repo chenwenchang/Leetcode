@@ -1,0 +1,35 @@
+class Solution:
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        d = dict()
+        for idx, num in enumerate(nums):
+            if num not in d.keys():
+                d[num] = 1
+            else:
+                del d[num]
+        return list(d.keys())[0]
+
+
+'''
+class Solution:
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        res = 0
+        for num in nums:
+            res ^= num
+        return res
+'''
+
+'''
+https://zhuanlan.zhihu.com/p/38323636
+关于异或和位运算的其他操作，matrix67还写过一些文章，可以参考学习
+http://www.matrix67.com/blog/archives/263
+http://www.matrix67.com/blog/archives/264
+http://www.matrix67.com/blog/archives/266
+'''
