@@ -23,13 +23,16 @@ Explanation: There are three ways to climb to the top.
 
 https://leetcode.com/problems/climbing-stairs/description/
 '''
-
+#fibonacci
 steps = dict()
 class Solution:
     def climbStairs(self, n):
         """
         :type n: int
         :rtype: int
+        """
+        return int((((1+5**0.5)/2)**(n+1) - ((1-5**0.5)/2)**(n+1) )/5**0.5)
+        
         """
         if n in steps.keys():
             return steps[n]
@@ -41,3 +44,4 @@ class Solution:
             res = self.climbStairs(n-1)
         steps[n] = res
         return res
+        """
